@@ -1,0 +1,25 @@
+.weather-card {
+  height:80px;
+  border-radius: 12px;
+  color: white;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+
+.weather-card--day {
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+}
+
+
+.weather-card--night {
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+.weather-card__temp{
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 36px;
+   margin: 20px 0 20px 10px;
+  padding:0;
+  position:absolute;
+}
