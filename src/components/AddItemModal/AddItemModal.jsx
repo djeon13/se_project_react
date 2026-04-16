@@ -10,11 +10,12 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    onAddItem({
-      name,
-      imageUrl,
-      weather,
-    });
+   onAddItem({
+  _id: Date.now(),        
+  name: name,
+  link: imageUrl,         
+  weather: weather,
+});
 
     onClose();
   }
@@ -58,6 +59,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
         <label className="modal__radio-label">
           <input
             type="radio"
+            name="weather"
             value="hot"
             checked={weather === "hot"}
             onChange={(e) => setWeather(e.target.value)}
@@ -68,6 +70,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
         <label className="modal__radio-label">
           <input
             type="radio"
+            name="weather"
             value="warm"
             checked={weather === "warm"}
             onChange={(e) => setWeather(e.target.value)}
@@ -78,6 +81,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
         <label className="modal__radio-label">
           <input
             type="radio"
+            name="weather"
             value="cold"
             checked={weather === "cold"}
             onChange={(e) => setWeather(e.target.value)}

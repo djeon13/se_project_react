@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import Header from '../Header/Header.jsx';
 import { getWeatherData } from '../../utils/weatherAPI.js';
 import { useEffect, useState } from 'react';
@@ -40,7 +40,14 @@ function App() {
 }
 
 function handleAddItem(newItem) {
-  setClothingItems([newItem, ...clothingItems]);
+  const formattedItem = {
+    _id: Date.now(),              
+    name: newItem.name,
+    link: newItem.imageUrl,      
+    weather: newItem.weather,
+  };
+
+  setClothingItems([formattedItem, ...clothingItems]);
 }
 
   return (
