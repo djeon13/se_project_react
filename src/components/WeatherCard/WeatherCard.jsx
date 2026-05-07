@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./WeatherCard.css";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+
 
 function WeatherCard({ weatherData }) {
-  const isDayTime =
-    weatherData &&
-    Date.now() / 1000 > weatherData.sys.sunrise &&
-    Date.now() / 1000 < weatherData.sys.sunset;
+  const { currentTemperatureUnit } = useContext(
+    CurrentTemperatureUnitContext
+  );
 
-  const weatherClass = isDayTime
-    ? "weather-card--day"
-    : "weather-card--night";
+  if (!weatherData || !weatherData.temperature) {
+    return null;
+  }
 
   return (
-    <section className={`weather-card ${weatherClass}`}>
+    <div className="weather-card weather-card--day">
       <p className="weather-card__temp">
-        {weatherData?.main?.temp
-          ? `${Math.round(weatherData.main.temp)}°F`
-          : "Loading..."}
+        {weatherData.temperature[currentTemperatureUnit]}°
+        {currentTemperatureUnit}
       </p>
-    </section>
+    </div>
   );
 }
 

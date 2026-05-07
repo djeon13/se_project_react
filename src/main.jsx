@@ -4,10 +4,10 @@ import App from "./components/App/App.jsx";
 import "./index.css";
 import "./vendor/normalize.css";
 import "./vendor/fonts.css";
-
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-)
+  </BrowserRouter>
+);

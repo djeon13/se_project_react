@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./ItemModal.css";
 
-function ItemModal({ isOpen, onClose, item }) {
+function ItemModal({ isOpen, onClose, item, onDelete }) {
 
 
   useEffect(() => {
@@ -17,46 +17,54 @@ function ItemModal({ isOpen, onClose, item }) {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [isOpen, onClose]);
 
-  return (
+return (
+  <div
+    className={`modal ${isOpen ? "modal_is-opened" : ""}`}
+    onClick={onClose}
+  >
     <div
-      className={`modal ${isOpen ? "modal_is-opened" : ""}`}
-      onClick={onClose}
+      className="modal__content"
+      onClick={(e) => e.stopPropagation()}
     >
-      <div
-        className="modal__content"
-        onClick={(e) => e.stopPropagation()}
+      <button
+        className="modal__close"
+        onClick={onClose}
       >
-      
-        <button
-          className="modal__close"
-          onClick={onClose}
-        >
-          ✕
-        </button>
+        ✕
+      </button>
 
-      
-        {item && (
-          <div className="modal__card">
-            <img
-              className="modal__image"
-              src={item.link}
-              alt={item.name}
-            />
+      {item && (
+        <div className="modal__card">
+          <img
+            className="modal__image"
+            src={item.link}
+            alt={item.name}
+          />
 
-            <div className="modal__info">
+          <div className="modal__footer">
+            <div className="modal__header-row">
               <h2 className="modal__item-name">
                 {item.name}
               </h2>
-              <p className="modal__weather">
-                Weather: {item.weather}
-              </p>
-            </div>
-          </div>
-        )}
 
-      </div>
+              <button
+                className="modal__delete-btn"
+                onClick={() => onDelete(item)}
+              >
+                Delete item
+              </button>
+            </div>
+
+            <p className="modal__weather">
+              Weather: {item.weather}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
 }
+
 
 export default ItemModal;

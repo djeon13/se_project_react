@@ -1,0 +1,35 @@
+.modal__content_type_confirm {
+  width: 500px;
+  padding: 60px 40px 40px;
+  background: white;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__confirm-text {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.modal__confirm-delete {
+  border: none;
+  background: transparent;
+  color: #ff4d00;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.modal__cancel {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}

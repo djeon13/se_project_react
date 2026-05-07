@@ -18,3 +18,8 @@ Users can also add their own clothing items.
 - Add new clothing items via modal
 - Preview items in modal
 
+## Project Pitch Video
+My pitch video on what I learned and how I navigated through challenges!
+
+- [React first pitch] (https://www.loom.com/share/f1b59f0133ab4355b4dc66095e95d868)
+
