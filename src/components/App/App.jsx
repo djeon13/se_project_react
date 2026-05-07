@@ -1,16 +1,16 @@
-import "./App.css";
+import './App.css';
 import Header from '../Header/Header.jsx';
 import { getWeatherData } from '../../utils/weatherAPI.js';
 import { useEffect, useState } from 'react';
-import Main from "../Main/Main.jsx";
-import Footer from "../Footer/Footer.jsx";
-import AddItemModal from "../AddItemModal/AddItemModal.jsx";
-import ItemModal from "../ItemModal/ItemModal.jsx";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
+import Main from '../Main/Main.jsx';
+import Footer from '../Footer/Footer.jsx';
+import AddItemModal from '../AddItemModal/AddItemModal.jsx';
+import ItemModal from '../ItemModal/ItemModal.jsx';
+import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext.js';
 import { Routes, Route } from 'react-router-dom';
-import Profile from "../Profile/Profile.jsx";
-import { getItems, addItem, deleteItem } from "../../utils/api";
-import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
+import Profile from '../Profile/Profile.jsx';
+import { getItems, addItem, deleteItem } from '../../utils/api';
+import DeleteConfirmationModal from '../DeleteConfirmationModal/DeleteConfirmationModal';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);

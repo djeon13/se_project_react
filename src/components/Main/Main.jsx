@@ -21,9 +21,9 @@ function Main({ weatherData, clothingItems, onCardClick }) {
     return "cold";
   }
 
-  const weatherType = getWeatherType(
-    weatherData.temperature[currentTemperatureUnit]
-  );
+const weatherType = getWeatherType(
+  weatherData.temperature.F
+);
 
   return (
     <main>

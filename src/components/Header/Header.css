@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "Cabinet Grotesk";
-  src: url("../../vendor/CabinetGrotesk-Bold.woff") format("woff")
+  src: url("../../vendor/CabinetGrotesk-Bold.woff") format("woff");
 }
 
 .header__title {

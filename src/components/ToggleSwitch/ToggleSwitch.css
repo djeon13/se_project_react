@@ -1,81 +1,73 @@
 .toggle-switch {
+  position: relative;
+
   display: flex;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 20px;
-  background-color: #f3f3f3;
-  cursor: pointer;
   align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  user-select: none;
+
+  cursor: pointer;
 }
 
-.toggle__track {
+.toggle-switch__checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle-switch__track {
   position: relative;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 80px;
-  height: 32px;
-  border: 1px solid black;
-  border-radius: 999px;
+
+  width: 56px;
+  height: 28px;
+
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+
   overflow: hidden;
+
+  background-color: white;
 }
 
-.toggle-switch span {
-  color: #aaa;
-  transition: all 0.2s ease;
-}
-
-.toggle-switch__active {
-  color: #000;
-  font-weight: 600;
-}
-
-.toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  user-select: none;
-}
-
-.toggle__label {
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;  
-  font-weight: 400;
-  width: 100%;
-  height: 100%;
-  color: black;
-  transition: color 0.2s ease;
-}
-
-.toggle__label.active {
-  color: white;
-}
-
-.toggle__thumb {
+.toggle-switch__thumb {
   position: absolute;
-  width: 50%;
-  height: 100%;
-  background: black;
-  border-radius: 999px;
   top: 0;
   left: 0;
+
+  width: 50%;
+  height: 100%;
+
+  background-color: black;
+  border-radius: 999px;
+
   transition: transform 0.2s ease;
+
   z-index: 1;
 }
 
-
-.toggle__thumb_left {
-  transform: translateX(2px);
+.toggle-switch__thumb_left {
+  transform: translateX(0);
 }
 
-.toggle__thumb_right {
+.toggle-switch__thumb_right {
   transform: translateX(100%);
+}
+
+.toggle-switch__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  z-index: 2;
+
+  color: #7e7e7e;
+
+  transition: color 0.2s ease;
+}
+
+.toggle-switch__label_active {
+  color: white;
 }

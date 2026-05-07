@@ -9,7 +9,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
     weather: "",
   });
 
-  function handleSubmit(e) {
+function handleSubmit(e) {
   e.preventDefault();
 
   onAddItem(
@@ -18,7 +18,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
       imageUrl: values.imageUrl,
       weather: values.weather,
     },
-    resetForm 
+    resetForm
   );
 }
 
