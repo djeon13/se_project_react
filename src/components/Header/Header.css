@@ -26,9 +26,9 @@
   font-family: "Cabinet Grotesk", Arial, sans-serif;
 }
 
-.header__left{
-    display:flex;
-    gap:20px;
+.header__left {
+  display: flex;
+  gap: 20px;
 }
 
 .header__right {
@@ -37,29 +37,28 @@
   align-items: center;
 }
 
-.header__date{
-     font-family: "Cabinet Grotesk", Arial, sans-serif;
+.header__date {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
 }
 
 .header__add-btn {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   background-color: transparent;
- border:none;
- display:flex;
- align-items:center;
+  border: none;
+  display: flex;
+  align-items: center;
   padding: 0;
   cursor: pointer;
 }
 
-.header__user{
-    display:flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
   color: inherit;
 }
 
 .header__username {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  
 }

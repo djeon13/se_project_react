@@ -1,6 +1,5 @@
-import { apiKey, latitude, longitude } from './constants.js';
-import { checkResponse } from './api.js'
-
+import { apiKey, latitude, longitude } from "./constants.js";
+import { checkResponse } from "./api.js";
 
 export const getWeatherData = () => {
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
@@ -12,7 +11,7 @@ export const getWeatherData = () => {
         name: data.name,
         temperature: {
           F: data.main.temp,
-          C: Math.round((data.main.temp - 32) * 5 / 9),
+          C: Math.round(((data.main.temp - 32) * 5) / 9),
         },
       };
 

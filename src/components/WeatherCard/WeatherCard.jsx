@@ -2,11 +2,8 @@ import React, { useContext } from "react";
 import "./WeatherCard.css";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
-
 function WeatherCard({ weatherData }) {
-  const { currentTemperatureUnit } = useContext(
-    CurrentTemperatureUnitContext
-  );
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   if (!weatherData || !weatherData.temperature) {
     return null;

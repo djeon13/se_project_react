@@ -9,9 +9,7 @@ function SideBar({ name }) {
         alt="avatar"
       />
 
-      <p className="sidebar__username">
-        {name}
-      </p>
+      <p className="sidebar__username">{name}</p>
     </div>
   );
 }

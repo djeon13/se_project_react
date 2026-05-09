@@ -9,18 +9,18 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
     weather: "",
   });
 
-function handleSubmit(e) {
-  e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  onAddItem(
-    {
-      name: values.name,
-      imageUrl: values.imageUrl,
-      weather: values.weather,
-    },
-    resetForm
-  );
-}
+    onAddItem(
+      {
+        name: values.name,
+        imageUrl: values.imageUrl,
+        weather: values.weather,
+      },
+      resetForm,
+    );
+  }
 
   return (
     <ModalWithForm
@@ -33,34 +33,32 @@ function handleSubmit(e) {
     >
       <label className="modal__label">
         Name
-      <input
-  className="modal__input"
-  type="text"
-  name="name"
-  value={values.name}
-  onChange={handleChange}
-  placeholder="Name"
-  required
-/>
+        <input
+          className="modal__input"
+          type="text"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+          placeholder="Name"
+          required
+        />
       </label>
 
       <label className="modal__label">
         Image URL
         <input
-  className="modal__input"
-  type="url"
-  name="imageUrl"
-  value={values.imageUrl}
-  onChange={handleChange}
-  placeholder="Image URL"
-  required
-/>
+          className="modal__input"
+          type="url"
+          name="imageUrl"
+          value={values.imageUrl}
+          onChange={handleChange}
+          placeholder="Image URL"
+          required
+        />
       </label>
 
       <fieldset className="modal__fieldset">
-        <legend className="modal__legend">
-  Select weather type:
-</legend>
+        <legend className="modal__legend">Select weather type:</legend>
 
         <label className="modal__radio-label">
           <input

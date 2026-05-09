@@ -10,7 +10,6 @@ function ModalWithForm({
   children,
   onSubmit,
 }) {
-
   useEffect(() => {
     if (!isOpen) return;
 
@@ -33,30 +32,16 @@ function ModalWithForm({
         className="modal__content modal__content_type_form"
         onClick={(e) => e.stopPropagation()}
       >
-      
-        <button
-          className="modal__close"
-          onClick={onClose}
-        >
+        <button className="modal__close" onClick={onClose}>
           ✕
         </button>
 
-
         <h2 className="modal__title">{title}</h2>
 
-
-        <form
-          className="modal__form"
-          name={name}
-          onSubmit={onSubmit}
-        >
+        <form className="modal__form" name={name} onSubmit={onSubmit}>
           {children}
 
-
-          <button
-            type="submit"
-            className="modal__submit"
-          >
+          <button type="submit" className="modal__submit">
             {buttonText}
           </button>
         </form>

@@ -5,7 +5,7 @@ ul {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 21px;
   width: 100%;
   padding: 0;
