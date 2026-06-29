@@ -18,6 +18,10 @@ Users can also add their own clothing items.
 - Add new clothing items via modal
 - Preview items in modal
 
+## Backend Repository
+
+https://github.com/djeon13/se_project_express
+
 ## Project Pitch Video
 My pitch video on what I learned and how I navigated through challenges!
 

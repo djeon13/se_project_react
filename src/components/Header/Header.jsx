@@ -1,10 +1,12 @@
-import React from "react";
 import "./Header.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch.jsx";
+import React, { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Header({ onAddItem, location }) {
+function Header({ onAddItem, onRegister, onLogin, location, isLoggedIn }) {
+  const currentUser = useContext(CurrentUserContext);
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -23,21 +25,52 @@ function Header({ onAddItem, location }) {
       </div>
 
       <div className="header__right">
-        <ToggleSwitch />
+       <ToggleSwitch />
 
-        <button className="header__add-btn" onClick={onAddItem}>
-          + Add Clothes
-        </button>
+{isLoggedIn ? (
+  <>
+    <button
+      className="header__add-btn"
+      onClick={onAddItem}
+    >
+      + Add Clothes
+    </button>
 
-        <Link to="/profile" className="header__user">
-          <span className="header__username">John Doe</span>
+    <Link to="/profile" className="header__user">
+      <span className="header__username">
+        {currentUser.name}
+      </span>
 
-          <img
-            src="https://i.pravatar.cc/40"
-            alt="User avatar"
-            className="header__avatar"
-          />
-        </Link>
+      {currentUser.avatar ? (
+        <img
+          src={currentUser.avatar}
+          alt={currentUser.name}
+          className="header__avatar"
+        />
+      ) : (
+        <div className="header__avatar-placeholder">
+          {currentUser.name?.[0]?.toUpperCase()}
+        </div>
+      )}
+    </Link>
+  </>
+) : (
+  <>
+    <button
+      className="header__auth-btn"
+      onClick={onRegister}
+    >
+      Sign Up
+    </button>
+
+    <button
+      className="header__auth-btn"
+      onClick={onLogin}
+    >
+      Log In
+    </button>
+  </>
+)}
       </div>
     </header>
   );

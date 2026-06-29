@@ -16,19 +16,54 @@
   display: block;
 }
 
-.item-card__name {
+.item-card__header {
   position: absolute;
   top: 15px;
   left: 50%;
-
   transform: translateX(-50%);
 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-card__name {
   margin: 0;
   padding: 2px 12px;
 
-  background-color: white;
+  background: #fff;
   border-radius: 4px;
 
   font-size: 16px;
   font-weight: 700;
 }
+
+.item-card__like-button {
+  width: 18px;
+  height: 18px;
+
+  border: none;
+  cursor: pointer;
+
+  background-color: transparent;
+  background-image: url("../../assets/State=Default.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.item-card__like-button_active {
+  background-image: url("../../assets/State=Liked.png");
+}
+
+.item-card__info {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+

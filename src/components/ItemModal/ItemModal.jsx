@@ -1,7 +1,12 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
+
 function ItemModal({ isOpen, onClose, item, onDelete }) {
+  const currentUser = useContext(CurrentUserContext);
+
+const isOwn = item && item.owner === currentUser._id;
   useEffect(() => {
     if (!isOpen) return;
 
@@ -33,12 +38,14 @@ function ItemModal({ isOpen, onClose, item, onDelete }) {
               <div className="modal__header-row">
                 <h2 className="modal__item-name">{item.name}</h2>
 
-                <button
-                  className="modal__delete-btn"
-                  onClick={() => onDelete(item)}
-                >
-                  Delete item
-                </button>
+                {isOwn && (
+  <button
+    className="modal__delete-btn"
+    onClick={() => onDelete(item)}
+  >
+    Delete item
+  </button>
+)}
               </div>
 
               <p className="modal__weather">Weather: {item.weather}</p>

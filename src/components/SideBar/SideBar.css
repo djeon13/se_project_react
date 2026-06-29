@@ -1,17 +1,37 @@
 .sidebar {
-  min-width: 229px;
+  width: 229px;
+  flex-shrink: 0;
+}
 
+.sidebar__user {
   display: flex;
   align-items: center;
   gap: 16px;
 
-  height: fit-content;
+  margin-bottom: 24px;
 }
 
 .sidebar__avatar {
   width: 56px;
   height: 56px;
+
   border-radius: 50%;
+}
+
+.sidebar__avatar-placeholder {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  background: #000;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .sidebar__username {
@@ -19,4 +39,26 @@
 
   font-size: 20px;
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.sidebar__button {
+  display: block;
+
+  border: none;
+  background: transparent;
+
+  padding: 0;
+  margin-bottom: 8px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.sidebar__button:hover {
+  opacity: .6;
 }
