@@ -28,7 +28,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
         name: values.name,
         avatar: values.avatar,
       },
-      resetForm
+      resetForm,
     );
   }
 

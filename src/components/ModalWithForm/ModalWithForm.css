@@ -20,13 +20,14 @@
   opacity: 1;
 }
 
-.modal__content.modal__content_type_form {
+.modal__content_type_form {
   font-family: "Cabinet Grotesk", sans-serif;
-  background: white;
-  border-radius: 16px;
+  background: #fff;
+  border-radius: 20px;
   width: 496px;
-  padding: 28px;
+  padding: 28px 28px 36px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close {

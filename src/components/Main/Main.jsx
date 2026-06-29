@@ -4,7 +4,13 @@ import "./Main.css";
 import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weatherData, clothingItems, onCardClick, onCardLike, isLoggedIn,}) {
+function Main({
+  weatherData,
+  clothingItems,
+  onCardClick,
+  onCardLike,
+  isLoggedIn,
+}) {
   console.log("Main isLoggedIn:", isLoggedIn);
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -25,14 +31,12 @@ function Main({ weatherData, clothingItems, onCardClick, onCardLike, isLoggedIn,
 
   const weatherType = getWeatherType(weatherData.temperature.F);
 
-console.log("weatherType:", weatherType);
-console.log("clothingItems:", clothingItems);
-console.log(
-  "filteredItems:",
-  clothingItems.filter(
-    (item) => item.weather.toLowerCase() === weatherType
-  )
-);
+  console.log("weatherType:", weatherType);
+  console.log("clothingItems:", clothingItems);
+  console.log(
+    "filteredItems:",
+    clothingItems.filter((item) => item.weather.toLowerCase() === weatherType),
+  );
 
   return (
     <main>
@@ -44,17 +48,17 @@ console.log(
       </p>
 
       <ul className="cards">
- {clothingItems
-  .filter((item) => item.weather.toLowerCase() === weatherType)
-  .map((item) => (
-    <ItemCard
-      key={item._id}
-      item={item}
-      onCardClick={onCardClick}
-      onCardLike={onCardLike}
-      isLoggedIn={isLoggedIn}
-    />
-  ))}
+        {clothingItems
+          .filter((item) => (item.weather || "").toLowerCase() === weatherType)
+          .map((item) => (
+            <ItemCard
+              key={item._id}
+              item={item}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              isLoggedIn={isLoggedIn}
+            />
+          ))}
       </ul>
     </main>
   );

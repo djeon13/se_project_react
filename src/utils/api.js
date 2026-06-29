@@ -16,7 +16,7 @@ export function addItem(item, token) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-       authorization: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(item),
   }).then(checkResponse);
@@ -26,8 +26,8 @@ export function deleteItem(id, token) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
-  authorization: `Bearer ${token}`,
-},
+      authorization: `Bearer ${token}`,
+    },
   }).then(checkResponse);
 }
 

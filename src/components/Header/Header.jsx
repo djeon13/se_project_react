@@ -25,52 +25,41 @@ function Header({ onAddItem, onRegister, onLogin, location, isLoggedIn }) {
       </div>
 
       <div className="header__right">
-       <ToggleSwitch />
+        <ToggleSwitch />
 
-{isLoggedIn ? (
-  <>
-    <button
-      className="header__add-btn"
-      onClick={onAddItem}
-    >
-      + Add Clothes
-    </button>
+        {isLoggedIn ? (
+          <>
+            <button className="header__add-btn" onClick={onAddItem}>
+              + Add Clothes
+            </button>
 
-    <Link to="/profile" className="header__user">
-      <span className="header__username">
-        {currentUser.name}
-      </span>
+            <Link to="/profile" className="header__user">
+              <span className="header__username">{currentUser.name}</span>
 
-      {currentUser.avatar ? (
-        <img
-          src={currentUser.avatar}
-          alt={currentUser.name}
-          className="header__avatar"
-        />
-      ) : (
-        <div className="header__avatar-placeholder">
-          {currentUser.name?.[0]?.toUpperCase()}
-        </div>
-      )}
-    </Link>
-  </>
-) : (
-  <>
-    <button
-      className="header__auth-btn"
-      onClick={onRegister}
-    >
-      Sign Up
-    </button>
+              {currentUser.avatar ? (
+                <img
+                  src={currentUser.avatar}
+                  alt={currentUser.name}
+                  className="header__avatar"
+                />
+              ) : (
+                <div className="header__avatar-placeholder">
+                  {currentUser.name?.[0]?.toUpperCase()}
+                </div>
+              )}
+            </Link>
+          </>
+        ) : (
+          <>
+            <button className="header__auth-btn" onClick={onRegister}>
+              Sign Up
+            </button>
 
-    <button
-      className="header__auth-btn"
-      onClick={onLogin}
-    >
-      Log In
-    </button>
-  </>
-)}
+            <button className="header__auth-btn" onClick={onLogin}>
+              Log In
+            </button>
+          </>
+        )}
       </div>
     </header>
   );
