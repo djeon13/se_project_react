@@ -11,14 +11,14 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
     avatar: "",
   });
 
-  useEffect(() => {
-    if (currentUser) {
-      setValues({
-        name: currentUser.name || "",
-        avatar: currentUser.avatar || "",
-      });
-    }
-  }, [currentUser, setValues]);
+ useEffect(() => {
+  if (!isOpen) return;
+
+  setValues({
+    name: currentUser.name || "",
+    avatar: currentUser.avatar || "",
+  });
+}, [isOpen, currentUser]);
 
   function handleSubmit(e) {
     e.preventDefault();

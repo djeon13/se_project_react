@@ -9,6 +9,8 @@ function ModalWithForm({
   buttonText,
   children,
   onSubmit,
+  secondaryButtonText,
+  onSecondaryClick,
 }) {
   useEffect(() => {
     if (!isOpen) return;
@@ -24,30 +26,51 @@ function ModalWithForm({
   }, [isOpen, onClose]);
 
   return (
+  <div
+    className={`modal modal_type_${name} ${
+      isOpen ? "modal_is-opened" : ""
+    }`}
+    onClick={onClose}
+  >
     <div
-      className={`modal modal_type_${name} ${isOpen ? "modal_is-opened" : ""}`}
-      onClick={onClose}
+      className="modal__content modal__content_type_form"
+      onClick={(e) => e.stopPropagation()}
     >
-      <div
-        className="modal__content modal__content_type_form"
-        onClick={(e) => e.stopPropagation()}
+      <button className="modal__close" onClick={onClose}>
+        ✕
+      </button>
+
+      <h2 className="modal__title">{title}</h2>
+
+      <form
+        className="modal__form"
+        name={name}
+        onSubmit={onSubmit}
       >
-        <button className="modal__close" onClick={onClose}>
-          ✕
-        </button>
+        {children}
 
-        <h2 className="modal__title">{title}</h2>
-
-        <form className="modal__form" name={name} onSubmit={onSubmit}>
-          {children}
-
-          <button type="submit" className="modal__submit">
+        <div className="modal__buttons">
+          <button
+            type="submit"
+            className="modal__submit"
+          >
             {buttonText}
           </button>
-        </form>
-      </div>
+
+          {secondaryButtonText && (
+            <button
+              type="button"
+              className="modal__secondary-btn"
+              onClick={onSecondaryClick}
+            >
+              {secondaryButtonText}
+            </button>
+          )}
+        </div>
+      </form>
     </div>
-  );
+  </div>
+);
 }
 
 export default ModalWithForm;

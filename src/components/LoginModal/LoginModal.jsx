@@ -1,11 +1,16 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
 
-function LoginModal({ isOpen, onClose, onLogin }) {
+function LoginModal({ isOpen, onClose, onLogin, onRegister }) {
   const { values, handleChange, resetForm } = useForm({
     email: "",
     password: "",
   });
+
+  function handleRegisterClick() {
+  onClose();
+  onRegister();
+}
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +32,8 @@ function LoginModal({ isOpen, onClose, onLogin }) {
       name="login"
       buttonText="Log In"
       onSubmit={handleSubmit}
+      secondaryButtonText="or Sign Up"
+      onSecondaryClick={handleRegisterClick}
     >
       <label className="modal__label">
         Email

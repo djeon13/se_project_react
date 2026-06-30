@@ -131,3 +131,25 @@
 .modal__submit_active {
   background: #000;
 }
+
+.modal__buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal__secondary-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  color: rgba(0, 0, 0, 0.5);
+
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal__secondary-btn:hover {
+  color: #000;
+}

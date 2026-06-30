@@ -278,6 +278,7 @@ function App() {
             isOpen={activeModal === "register"}
             onClose={handleCloseModal}
             onRegister={handleRegister}
+            onLogin={handleOpenLoginModal}
           />
 
           <EditProfileModal
@@ -290,6 +291,7 @@ function App() {
             isOpen={activeModal === "login"}
             onClose={handleCloseModal}
             onLogin={handleLogin}
+            onRegister={handleOpenRegisterModal}
           />
 
           <ItemModal

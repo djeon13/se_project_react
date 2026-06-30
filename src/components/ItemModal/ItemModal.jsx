@@ -24,7 +24,8 @@ function ItemModal({ isOpen, onClose, item, onDelete }) {
       className={`modal ${isOpen ? "modal_is-opened" : ""}`}
       onClick={onClose}
     >
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal__content modal__content_type_image" 
+      onClick={(e) => e.stopPropagation()}>
         <button className="modal__close" onClick={onClose}>
           ✕
         </button>
